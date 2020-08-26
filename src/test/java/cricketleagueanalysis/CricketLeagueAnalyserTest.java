@@ -71,4 +71,31 @@ public class CricketLeagueAnalyserTest {
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("Umesh Yadav", iplMostRunCSV[0].playerName);
     }
+
+    @Test
+    public void givenMostRunFactSheet_WhenShortedOnBestBowlerStrikeRate_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+        CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
+        cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.PlayerType.BOWLER, MOST_WKTS_CSV_FILE_PATH);
+        String sortedFactSheetData = cricketLeagueAnalyser.getBestBowlerStrikeRateSortedFactSheet();
+        IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
+        Assert.assertEquals("Krishnappa Gowtham", iplMostRunCSV[0].playerName);
+    }
+
+    @Test
+    public void givenMostRunFactSheet_WhenShortedOnBestEconomyRate_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+        CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
+        cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.PlayerType.BOWLER, MOST_WKTS_CSV_FILE_PATH);
+        String sortedFactSheetData = cricketLeagueAnalyser.getBestEconomyRateSortedFactSheet();
+        IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
+        Assert.assertEquals("Ben Cutting", iplMostRunCSV[0].playerName);
+    }
+
+    @Test
+    public void givenMostRunFactSheet_WhenShortedOnBestStrikeRateWith4wAnd5w_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+        CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
+        cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.PlayerType.BOWLER, MOST_WKTS_CSV_FILE_PATH);
+        String sortedFactSheetData = cricketLeagueAnalyser.getBestStrikeRateWith4wAnd5wSortedFactSheet();
+        IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
+        Assert.assertEquals("Lasith Malinga", iplMostRunCSV[0].playerName);
+    }
 }
