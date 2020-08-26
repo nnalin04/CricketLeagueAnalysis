@@ -11,12 +11,12 @@ public class CricketLeagueAnalyser {
 
     Map<String, FactSheetDAO>  factSheetMap;
 
-    public enum Cricketer {
+    public enum PlayerType{
         BATSMEN, BOWLER
     }
 
-    public Map<String, FactSheetDAO> loadLeagueFactSheet(Cricketer cricketer, String csvFilePath) throws CricketLeagueAnalyserException {
-        factSheetMap = new FactSheetLoader().leagueFactLoader(cricketer, csvFilePath);
+    public Map<String, FactSheetDAO> loadLeagueFactSheet(PlayerType playerType, String csvFilePath) throws CricketLeagueAnalyserException {
+        factSheetMap = new FactSheetLoader().leagueFactLoader(playerType, csvFilePath);
         return factSheetMap;
     }
 
