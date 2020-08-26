@@ -34,6 +34,15 @@ public class CricketLeagueAnalyser {
         return sortedStateCensusJson;
     }
 
+    public String getMax6sAnd4sSortedFactSheet() {
+        Comparator<FactSheetDAO> censusComparator = Comparator.comparing(leagueFact -> leagueFact.fours * 4 + leagueFact.sixes * 6);
+        List<FactSheetDAO> factSheetDAO = factSheetMap.values().stream()
+                .collect(Collectors.toList());
+        this.sort(factSheetDAO, censusComparator);
+        String sortedStateCensusJson = new Gson().toJson(factSheetDAO);
+        return sortedStateCensusJson;
+    }
+
     private void sort(List<FactSheetDAO> factSheetDAOS, Comparator<FactSheetDAO> censusComparator) {
         for (int i = 0; i < factSheetDAOS.size()-1; i++) {
             for (int j =0; j< factSheetDAOS.size() -i -1; j++) {
@@ -46,4 +55,6 @@ public class CricketLeagueAnalyser {
             }
         }
     }
+
+
 }
