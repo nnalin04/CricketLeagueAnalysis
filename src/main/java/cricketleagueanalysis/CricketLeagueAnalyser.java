@@ -21,8 +21,8 @@ public class CricketLeagueAnalyser {
         List<FactSheetDAO> factSheetDAO = factSheetMap.values().stream()
                 .collect(Collectors.toList());
         this.sort(factSheetDAO, avgRunComparator);
-        String sortedStateCensusJson = new Gson().toJson(factSheetDAO);
-        return sortedStateCensusJson;
+        String sortedFactSheetJson = new Gson().toJson(factSheetDAO);
+        return sortedFactSheetJson;
     }
 
     public String getStrikingRatesSortedFactSheet() {
@@ -30,8 +30,8 @@ public class CricketLeagueAnalyser {
         List<FactSheetDAO> factSheetDAO = factSheetMap.values().stream()
                 .collect(Collectors.toList());
         this.sort(factSheetDAO, strikeRateComparator);
-        String sortedStateCensusJson = new Gson().toJson(factSheetDAO);
-        return sortedStateCensusJson;
+        String sortedFactSheetJson = new Gson().toJson(factSheetDAO);
+        return sortedFactSheetJson;
     }
 
     public String getMax4sAnd6sSortedFactSheet() {
@@ -39,8 +39,8 @@ public class CricketLeagueAnalyser {
         List<FactSheetDAO> factSheetDAO = factSheetMap.values().stream()
                 .collect(Collectors.toList());
         this.sort(factSheetDAO, fourAndSixComparator);
-        String sortedStateCensusJson = new Gson().toJson(factSheetDAO);
-        return sortedStateCensusJson;
+        String sortedFactSheetJson = new Gson().toJson(factSheetDAO);
+        return sortedFactSheetJson;
     }
 
     public String getMax4sAnd6sWithStrikeRatesSortedFactSheet() {
@@ -50,8 +50,8 @@ public class CricketLeagueAnalyser {
         List<FactSheetDAO> factSheetDAO = factSheetMap.values().stream()
                 .collect(Collectors.toList());
         this.sort(factSheetDAO, fourAndSixComparator.thenComparing(strikeRateComparator));
-        String sortedStateCensusJson = new Gson().toJson(factSheetDAO);
-        return sortedStateCensusJson;
+        String sortedFactSheetJson = new Gson().toJson(factSheetDAO);
+        return sortedFactSheetJson;
     }
 
     public String getBattingAverageWithStrikeRatesSortedFactSheet() {
@@ -60,8 +60,18 @@ public class CricketLeagueAnalyser {
         List<FactSheetDAO> factSheetDAO = factSheetMap.values().stream()
                 .collect(Collectors.toList());
         this.sort(factSheetDAO, strikeRateComparator.thenComparing(avgRunComparator));
-        String sortedStateCensusJson = new Gson().toJson(factSheetDAO);
-        return sortedStateCensusJson;
+        String sortedFactSheetJson = new Gson().toJson(factSheetDAO);
+        return sortedFactSheetJson;
+    }
+
+    public String getBestRunsWithBattingAverageSortedFactSheet() {
+        Comparator<FactSheetDAO> avgRunComparator = Comparator.comparing(leagueFact -> leagueFact.avgRun);
+        Comparator<FactSheetDAO> runComparator = Comparator.comparing(leagueFact -> leagueFact.runs);
+        List<FactSheetDAO> factSheetDAO = factSheetMap.values().stream()
+                .collect(Collectors.toList());
+        this.sort(factSheetDAO, runComparator.thenComparing(avgRunComparator));
+        String sortedFactSheetJson = new Gson().toJson(factSheetDAO);
+        return sortedFactSheetJson;
     }
 
     private void sort(List<FactSheetDAO> factSheetDAOS, Comparator<FactSheetDAO> comparator) {
@@ -76,6 +86,4 @@ public class CricketLeagueAnalyser {
             }
         }
     }
-
-
 }
