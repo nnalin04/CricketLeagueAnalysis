@@ -13,8 +13,17 @@ public class CricketLeagueAnalyserTest {
     public void givenMostRunFactSheet_WhenShortedOnBattingAverage_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(MOST_RUN_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getBattingAvRageSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getBattingAvrageSortedFactSheet();
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("MS Dhoni", iplMostRunCSV[0].playerName);
+    }
+
+    @Test
+    public void givenMostRunFactSheet_WhenShortedOnStrikingRates_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+        CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
+        cricketLeagueAnalyser.loadLeagueFactSheet(MOST_RUN_CSV_FILE_PATH);
+        String sortedFactSheetData = cricketLeagueAnalyser.getStrikingRatesSortedFactSheet();
+        IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
+        Assert.assertEquals("Ishant Sharma", iplMostRunCSV[0].playerName);
     }
 }
