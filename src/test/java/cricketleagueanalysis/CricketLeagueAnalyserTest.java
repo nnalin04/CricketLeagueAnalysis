@@ -13,7 +13,7 @@ public class CricketLeagueAnalyserTest {
     public void givenMostRunFactSheet_WhenShortedOnBattingAverage_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(MOST_RUN_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getBattingAvrageSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getBattingAverageSortedFactSheet();
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("MS Dhoni", iplMostRunCSV[0].playerName);
     }
@@ -31,7 +31,16 @@ public class CricketLeagueAnalyserTest {
     public void givenMostRunFactSheet_WhenShortedOnMaximum6sAnd4s_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(MOST_RUN_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getMax6sAnd4sSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getMax4sAnd6sSortedFactSheet();
+        IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
+        Assert.assertEquals("Andre Russell", iplMostRunCSV[0].playerName);
+    }
+
+    @Test
+    public void givenMostRunFactSheet_WhenShortedOnMaximum6sAnd4sWithStrikingRates_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+        CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
+        cricketLeagueAnalyser.loadLeagueFactSheet(MOST_RUN_CSV_FILE_PATH);
+        String sortedFactSheetData = cricketLeagueAnalyser.getMax4sAnd6sWithStrikeRatesSortedFactSheet();
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("Andre Russell", iplMostRunCSV[0].playerName);
     }
