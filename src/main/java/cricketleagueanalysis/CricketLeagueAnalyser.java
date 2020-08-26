@@ -54,6 +54,16 @@ public class CricketLeagueAnalyser {
         return sortedStateCensusJson;
     }
 
+    public String getBattingAverageWithStrikeRatesSortedFactSheet() {
+        Comparator<FactSheetDAO> avgRunComparator = Comparator.comparing(leagueFact -> leagueFact.avgRun);
+        Comparator<FactSheetDAO> strikeRateComparator = Comparator.comparing(leagueFact -> leagueFact.strikeRate);
+        List<FactSheetDAO> factSheetDAO = factSheetMap.values().stream()
+                .collect(Collectors.toList());
+        this.sort(factSheetDAO, strikeRateComparator.thenComparing(avgRunComparator));
+        String sortedStateCensusJson = new Gson().toJson(factSheetDAO);
+        return sortedStateCensusJson;
+    }
+
     private void sort(List<FactSheetDAO> factSheetDAOS, Comparator<FactSheetDAO> comparator) {
         for (int i = 0; i < factSheetDAOS.size()-1; i++) {
             for (int j =0; j< factSheetDAOS.size() -i -1; j++) {
@@ -66,4 +76,6 @@ public class CricketLeagueAnalyser {
             }
         }
     }
+
+
 }
