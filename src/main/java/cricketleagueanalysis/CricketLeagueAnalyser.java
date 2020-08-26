@@ -11,8 +11,12 @@ public class CricketLeagueAnalyser {
 
     Map<String, FactSheetDAO>  factSheetMap;
 
-    public Map<String, FactSheetDAO> loadLeagueFactSheet(String csvFilePath) throws CricketLeagueAnalyserException {
-        factSheetMap = new FactSheetLoader().loadFactSheetData(IPLMostRunCSV.class,csvFilePath);
+    public enum Cricketer {
+        BATSMEN, BOWLER
+    }
+
+    public Map<String, FactSheetDAO> loadLeagueFactSheet(Cricketer cricketer, String csvFilePath) throws CricketLeagueAnalyserException {
+        factSheetMap = new FactSheetLoader().leagueFactLoader(cricketer, csvFilePath);
         return factSheetMap;
     }
 
@@ -70,6 +74,15 @@ public class CricketLeagueAnalyser {
         List<FactSheetDAO> factSheetDAO = factSheetMap.values().stream()
                 .collect(Collectors.toList());
         this.sort(factSheetDAO, runComparator.thenComparing(avgRunComparator));
+        String sortedFactSheetJson = new Gson().toJson(factSheetDAO);
+        return sortedFactSheetJson;
+    }
+
+    public String getBestBowlingAverageSortedFactSheet() {
+        Comparator<FactSheetDAO> bowlingAvgComparator = Comparator.comparing(leagueFact -> leagueFact.avgRun);
+        List<FactSheetDAO> factSheetDAO = factSheetMap.values().stream()
+                .collect(Collectors.toList());
+        this.sort(factSheetDAO, bowlingAvgComparator);
         String sortedFactSheetJson = new Gson().toJson(factSheetDAO);
         return sortedFactSheetJson;
     }

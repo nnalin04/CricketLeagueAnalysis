@@ -2,6 +2,7 @@ package cricketleagueanalysis;
 
 public class FactSheetDAO {
 
+    public double bowlingAvg;
     public int runs;
     public int fours;
     public int sixes;
@@ -16,5 +17,10 @@ public class FactSheetDAO {
         fours = iplMostRunCSV.fours;
         sixes = iplMostRunCSV.sixes;
         runs = iplMostRunCSV.runs;
+    }
+
+    public FactSheetDAO(IPLMostWktsCSV iplMostWktsCSV){
+        playerName = iplMostWktsCSV.playerName;
+        bowlingAvg = iplMostWktsCSV.bowlingAvg;
     }
 }
