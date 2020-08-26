@@ -87,6 +87,34 @@ public class CricketLeagueAnalyser {
         return sortedFactSheetJson;
     }
 
+    public String getBestBowlerStrikeRateSortedFactSheet() {
+        Comparator<FactSheetDAO> bowlerStrikeRateComparator = Comparator.comparing(leagueFact -> leagueFact.strikeRate);
+        List<FactSheetDAO> factSheetDAO = factSheetMap.values().stream()
+                .collect(Collectors.toList());
+        this.sort(factSheetDAO, bowlerStrikeRateComparator);
+        String sortedFactSheetJson = new Gson().toJson(factSheetDAO);
+        return sortedFactSheetJson;
+    }
+
+    public String getBestEconomyRateSortedFactSheet() {
+        Comparator<FactSheetDAO> ecoRateComparator = Comparator.comparing(leagueFact -> leagueFact.ecoRate);
+        List<FactSheetDAO> factSheetDAO = factSheetMap.values().stream()
+                .collect(Collectors.toList());
+        this.sort(factSheetDAO, ecoRateComparator);
+        String sortedFactSheetJson = new Gson().toJson(factSheetDAO);
+        return sortedFactSheetJson;
+    }
+
+    public String getBestStrikeRateWith4wAnd5wSortedFactSheet() {
+        Comparator<FactSheetDAO> bowlerStrikeRateComparator = Comparator.comparing(leagueFact -> leagueFact.strikeRate);
+        Comparator<FactSheetDAO> w4AndW5Comparator = Comparator.comparing(leagueFact -> leagueFact.fourWicket + leagueFact.fourWicket);
+        List<FactSheetDAO> factSheetDAO = factSheetMap.values().stream()
+                .collect(Collectors.toList());
+        this.sort(factSheetDAO, w4AndW5Comparator.thenComparing(bowlerStrikeRateComparator));
+        String sortedFactSheetJson = new Gson().toJson(factSheetDAO);
+        return sortedFactSheetJson;
+    }
+
     private void sort(List<FactSheetDAO> factSheetDAOS, Comparator<FactSheetDAO> comparator) {
         for (int i = 0; i < factSheetDAOS.size()-1; i++) {
             for (int j =0; j< factSheetDAOS.size() -i -1; j++) {
