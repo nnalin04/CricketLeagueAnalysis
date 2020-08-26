@@ -16,8 +16,17 @@ public class CricketLeagueAnalyser {
         return factSheetMap;
     }
 
-    public String getBattingAvRageSortedFactSheet() {
+    public String getBattingAvrageSortedFactSheet() {
         Comparator<FactSheetDAO> censusComparator = Comparator.comparing(leagueFact -> leagueFact.avgRun);
+        List<FactSheetDAO> factSheetDAO = factSheetMap.values().stream()
+                .collect(Collectors.toList());
+        this.sort(factSheetDAO, censusComparator);
+        String sortedStateCensusJson = new Gson().toJson(factSheetDAO);
+        return sortedStateCensusJson;
+    }
+
+    public String getStrikingRatesSortedFactSheet() {
+        Comparator<FactSheetDAO> censusComparator = Comparator.comparing(leagueFact -> leagueFact.strikeRate);
         List<FactSheetDAO> factSheetDAO = factSheetMap.values().stream()
                 .collect(Collectors.toList());
         this.sort(factSheetDAO, censusComparator);
