@@ -2,6 +2,7 @@ package cricketleagueanalysis;
 
 public class FactSheetDAO {
 
+    public int hundreds;
     public int wicket;
     public int fiveWicket;
     public int fourWicket;
@@ -21,6 +22,7 @@ public class FactSheetDAO {
         fours = iplMostRunCSV.fours;
         sixes = iplMostRunCSV.sixes;
         runs = iplMostRunCSV.runs;
+        hundreds = iplMostRunCSV.hundreds;
     }
 
     public FactSheetDAO(IPLMostWktsCSV iplMostWktsCSV){

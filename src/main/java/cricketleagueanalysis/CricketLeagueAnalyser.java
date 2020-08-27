@@ -26,6 +26,8 @@ public class CricketLeagueAnalyser {
     Comparator<FactSheetDAO> w4AndW5Comparator = Comparator.comparing
             (leagueFact -> leagueFact.fourWicket + leagueFact.fourWicket);
     Comparator<FactSheetDAO> wicketComparator = Comparator.comparing(leagueFact -> leagueFact.wicket);
+    Comparator<FactSheetDAO> hundredComparator = Comparator.comparing(leagueFact -> leagueFact.hundreds);
+
 
 
     public void loadLeagueFactSheet(Cricketer cricketer, String... csvFilePath) throws CricketLeagueAnalyserException {
@@ -113,6 +115,12 @@ public class CricketLeagueAnalyser {
     public String getBestRunsAndWicketsSortedFactSheet() {
         List<FactSheetDAO> factSheetDAO = new ArrayList<>(factSheetMap.values());
         this.sort(factSheetDAO, wicketComparator.thenComparing(runComparator));
+        return new Gson().toJson(factSheetDAO);
+    }
+
+    public String getBestBattingAverageWithMax100SortedFactSheet() {
+        List<FactSheetDAO> factSheetDAO = new ArrayList<>(factSheetMap.values());
+        this.sort(factSheetDAO, hundredComparator.thenComparing(battingAvgComparator));
         return new Gson().toJson(factSheetDAO);
     }
 

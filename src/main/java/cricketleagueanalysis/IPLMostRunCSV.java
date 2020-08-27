@@ -21,4 +21,7 @@ public class IPLMostRunCSV {
 
     @CsvBindByName(column = "Runs", required = true)
     public int runs;
+
+    @CsvBindByName(column = "100", required = true)
+    public int hundreds;
 }
