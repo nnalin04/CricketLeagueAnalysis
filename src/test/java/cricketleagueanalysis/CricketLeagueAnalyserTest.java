@@ -134,4 +134,13 @@ public class CricketLeagueAnalyserTest {
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("David Warner", iplMostRunCSV[0].playerName);
     }
+
+    @Test
+    public void givenMostRunFactSheet_WhenShortedOnBestBattingAverageWithMax100_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+        CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
+        cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
+        String sortedFactSheetData = cricketLeagueAnalyser.getBestBattingAverageWithMax100SortedFactSheet();
+        IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
+        Assert.assertEquals("David Warner", iplMostRunCSV[0].playerName);
+    }
 }
