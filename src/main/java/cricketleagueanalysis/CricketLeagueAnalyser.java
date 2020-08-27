@@ -27,6 +27,8 @@ public class CricketLeagueAnalyser {
             (leagueFact -> leagueFact.fourWicket + leagueFact.fourWicket);
     Comparator<FactSheetDAO> wicketComparator = Comparator.comparing(leagueFact -> leagueFact.wicket);
     Comparator<FactSheetDAO> hundredComparator = Comparator.comparing(leagueFact -> leagueFact.hundreds);
+    Comparator<FactSheetDAO> hundredAnd50sComparator = Comparator.comparing
+            (leagueFact -> leagueFact.hundreds + leagueFact.fifty);
 
 
 
@@ -121,6 +123,12 @@ public class CricketLeagueAnalyser {
     public String getBestBattingAverageWithMax100SortedFactSheet() {
         List<FactSheetDAO> factSheetDAO = new ArrayList<>(factSheetMap.values());
         this.sort(factSheetDAO, hundredComparator.thenComparing(battingAvgComparator));
+        return new Gson().toJson(factSheetDAO);
+    }
+
+    public String getBestBattingAverageWithMin100sAnd50SortedFactSheet() {
+        List<FactSheetDAO> factSheetDAO = new ArrayList<>(factSheetMap.values());
+        this.sort(factSheetDAO, hundredAnd50sComparator.reversed().thenComparing((battingAvgComparator)));
         return new Gson().toJson(factSheetDAO);
     }
 
