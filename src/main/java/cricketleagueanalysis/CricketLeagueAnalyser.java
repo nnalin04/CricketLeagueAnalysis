@@ -104,6 +104,12 @@ public class CricketLeagueAnalyser {
         return new Gson().toJson(factSheetDAO);
     }
 
+    public String getBestBattingAndBowlingAverageSortedFactSheet() {
+        List<FactSheetDAO> factSheetDAO = new ArrayList<>(factSheetMap.values());
+        this.sort(factSheetDAO, bowlingAvgComparator.thenComparing(battingAvgComparator));
+        return new Gson().toJson(factSheetDAO);
+    }
+
     private void sort(List<FactSheetDAO> factSheetDAOS, Comparator<FactSheetDAO> comparator) {
         for (int i = 0; i < factSheetDAOS.size()-1; i++) {
             for (int j =0; j< factSheetDAOS.size() -i -1; j++) {
