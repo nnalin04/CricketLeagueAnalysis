@@ -15,10 +15,10 @@ import java.util.stream.StreamSupport;
 
 public class FactSheetLoader {
 
-    public Map<String, FactSheetDAO> leagueFactLoader(CricketLeagueAnalyser.PlayerType playerType, String csvFilePath) throws CricketLeagueAnalyserException {
-        if(playerType.equals(CricketLeagueAnalyser.PlayerType.BATSMEN)){
+    public Map<String, FactSheetDAO> leagueFactLoader(CricketLeagueAnalyser.Cricketer cricketer, String csvFilePath) throws CricketLeagueAnalyserException {
+        if(cricketer.equals(CricketLeagueAnalyser.Cricketer.BATSMEN)){
             return this.loadFactSheetData(IPLMostRunCSV.class,csvFilePath);
-        }else if (playerType.equals(CricketLeagueAnalyser.PlayerType.BOWLER)) {
+        }else if (cricketer.equals(CricketLeagueAnalyser.Cricketer.BOWLER)) {
             return this.loadFactSheetData(IPLMostWktsCSV.class,csvFilePath);
         }else throw new CricketLeagueAnalyserException("Incorrect Player Type",
                 CricketLeagueAnalyserException.ExceptionType.INVALID_PLAYER_TYPE);

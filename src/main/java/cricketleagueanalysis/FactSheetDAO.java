@@ -2,6 +2,7 @@ package cricketleagueanalysis;
 
 public class FactSheetDAO {
 
+    public int wicket;
     public int fiveWicket;
     public int fourWicket;
     public double ecoRate;
@@ -11,11 +12,11 @@ public class FactSheetDAO {
     public int sixes;
     public double strikeRate;
     public String playerName;
-    public double avgRun;
+    public double battingAvg;
 
     public FactSheetDAO(IPLMostRunCSV iplMostRunCSV) {
         playerName = iplMostRunCSV.playerName;
-        avgRun = iplMostRunCSV.avgRun;
+        battingAvg = iplMostRunCSV.avgRun;
         strikeRate = iplMostRunCSV.strikeRate;
         fours = iplMostRunCSV.fours;
         sixes = iplMostRunCSV.sixes;
@@ -29,5 +30,6 @@ public class FactSheetDAO {
         ecoRate = iplMostWktsCSV.ecoRate;
         fourWicket = iplMostWktsCSV.fourWicket;
         fiveWicket = iplMostWktsCSV.fiveWicket;
+        wicket = iplMostWktsCSV.wicket;
     }
 }
