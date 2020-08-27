@@ -28,7 +28,7 @@ public class CricketLeagueAnalyser {
     Comparator<FactSheetDAO> wicketComparator = Comparator.comparing(leagueFact -> leagueFact.wicket);
 
 
-    public void loadLeagueFactSheet(Cricketer cricketer, String csvFilePath) throws CricketLeagueAnalyserException {
+    public void loadLeagueFactSheet(Cricketer cricketer, String... csvFilePath) throws CricketLeagueAnalyserException {
         factSheetMap = new FactSheetLoader().leagueFactLoader(cricketer, csvFilePath);
     }
 
