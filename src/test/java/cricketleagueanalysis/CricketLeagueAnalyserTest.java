@@ -10,7 +10,8 @@ public class CricketLeagueAnalyserTest {
     private static final String MOST_WKTS_CSV_FILE_PATH = "./src/test/resources/IPL2019FactSheetMostWkts.csv";
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnBattingAverage_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnBattingAverage_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getBattingAverageSortedFactSheet();
@@ -19,7 +20,8 @@ public class CricketLeagueAnalyserTest {
     }
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnStrikingRates_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnStrikingRates_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getStrikingRatesSortedFactSheet();
@@ -28,7 +30,8 @@ public class CricketLeagueAnalyserTest {
     }
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnMaximum6sAnd4s_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnMaximum6sAnd4s_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getMax4sAnd6sSortedFactSheet();
@@ -37,7 +40,8 @@ public class CricketLeagueAnalyserTest {
     }
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnMaximum6sAnd4sWithStrikingRates_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnMaximum6sAnd4sWithStrikingRates_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getMax4sAnd6sWithStrikeRatesSortedFactSheet();
@@ -46,7 +50,8 @@ public class CricketLeagueAnalyserTest {
     }
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnBattingAverageWithBestStrikingRates_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnBattingAverageWithBestStrikingRates_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getBattingAverageWithStrikeRatesSortedFactSheet();
@@ -55,7 +60,8 @@ public class CricketLeagueAnalyserTest {
     }
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnBestRunsWithBattingAverage_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnBestRunsWithBattingAverage_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getBestRunsWithBattingAverageSortedFactSheet();
@@ -64,7 +70,8 @@ public class CricketLeagueAnalyserTest {
     }
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnBestBowlingAverage_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnBestBowlingAverage_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BOWLER, MOST_WKTS_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getBestBowlingAverageSortedFactSheet();
@@ -73,7 +80,8 @@ public class CricketLeagueAnalyserTest {
     }
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnBestBowlerStrikeRate_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnBestBowlerStrikeRate_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BOWLER, MOST_WKTS_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getBestBowlerStrikeRateSortedFactSheet();
@@ -82,7 +90,8 @@ public class CricketLeagueAnalyserTest {
     }
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnBestEconomyRate_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnBestEconomyRate_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BOWLER, MOST_WKTS_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getBestEconomyRateSortedFactSheet();
@@ -91,7 +100,8 @@ public class CricketLeagueAnalyserTest {
     }
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnBestStrikeRateWith4wAnd5w_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnBestStrikeRateWith4wAnd5w_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BOWLER, MOST_WKTS_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getBestStrikeRateWith4wAnd5wSortedFactSheet();
@@ -100,7 +110,8 @@ public class CricketLeagueAnalyserTest {
     }
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnBestBowlingAverageWithStrikeRate_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnBestBowlingAverageWithStrikeRate_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BOWLER, MOST_WKTS_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getBestBowlingAverageWithStrikeRateSortedFactSheet();
@@ -109,7 +120,8 @@ public class CricketLeagueAnalyserTest {
     }
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnBestBowlingAverageWithMaxWicket_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnBestBowlingAverageWithMaxWicket_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BOWLER, MOST_WKTS_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getBestBowlingAverageWithMaxWicketSortedFactSheet();
@@ -118,25 +130,30 @@ public class CricketLeagueAnalyserTest {
     }
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnBestBattingAndBowlingAverage_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnBestBattingAndBowlingAverage_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
-        cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BATSMEN,MOST_RUN_CSV_FILE_PATH, MOST_WKTS_CSV_FILE_PATH);
+        cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BATSMEN,
+                MOST_RUN_CSV_FILE_PATH, MOST_WKTS_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getBestBattingAndBowlingAverageSortedFactSheet();
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("MS Dhoni", iplMostRunCSV[0].playerName);
     }
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnBestRunsAndWickets_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnBestRunsAndWickets_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
-        cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BATSMEN,MOST_RUN_CSV_FILE_PATH, MOST_WKTS_CSV_FILE_PATH);
+        cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BATSMEN,
+                MOST_RUN_CSV_FILE_PATH, MOST_WKTS_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getBestRunsAndWicketsSortedFactSheet();
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("David Warner", iplMostRunCSV[0].playerName);
     }
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnBestBattingAverageWithMax100_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnBestBattingAverageWithMax100_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getBestBattingAverageWithMax100SortedFactSheet();
@@ -145,7 +162,8 @@ public class CricketLeagueAnalyserTest {
     }
 
     @Test
-    public void givenMostRunFactSheet_WhenShortedOnBestBattingAverageWithMin100sAnd50_ShouldReturnSortedResult() throws CricketLeagueAnalyserException {
+    public void givenMostRunFactSheet_WhenShortedOnBestBattingAverageWithMin100sAnd50_ShouldReturnSortedResult()
+            throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(CricketLeagueAnalyser.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
         String sortedFactSheetData = cricketLeagueAnalyser.getBestBattingAverageWithMin100sAnd50SortedFactSheet();
