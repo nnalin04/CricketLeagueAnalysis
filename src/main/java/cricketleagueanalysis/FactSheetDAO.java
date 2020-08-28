@@ -2,6 +2,7 @@ package cricketleagueanalysis;
 
 public class FactSheetDAO {
 
+    public double bowlerStrikeRate;
     public int fifty;
     public int hundreds;
     public int wicket;
@@ -12,14 +13,14 @@ public class FactSheetDAO {
     public int runs;
     public int fours;
     public int sixes;
-    public double strikeRate;
+    public double battingStrikeRate;
     public String playerName;
     public double battingAvg;
 
     public FactSheetDAO(IPLMostRunCSV iplMostRunCSV) {
         playerName = iplMostRunCSV.playerName;
         battingAvg = iplMostRunCSV.avgRun;
-        strikeRate = iplMostRunCSV.strikeRate;
+        battingStrikeRate = iplMostRunCSV.strikeRate;
         fours = iplMostRunCSV.fours;
         sixes = iplMostRunCSV.sixes;
         runs = iplMostRunCSV.runs;
@@ -30,7 +31,7 @@ public class FactSheetDAO {
     public FactSheetDAO(IPLMostWktsCSV iplMostWktsCSV){
         playerName = iplMostWktsCSV.playerName;
         bowlingAvg = iplMostWktsCSV.bowlingAvg;
-        strikeRate = iplMostWktsCSV.strikeRate;
+        bowlerStrikeRate = iplMostWktsCSV.strikeRate;
         ecoRate = iplMostWktsCSV.ecoRate;
         fourWicket = iplMostWktsCSV.fourWicket;
         fiveWicket = iplMostWktsCSV.fiveWicket;
@@ -50,7 +51,7 @@ public class FactSheetDAO {
                 ", runs=" + runs +
                 ", fours=" + fours +
                 ", sixes=" + sixes +
-                ", strikeRate=" + strikeRate +
+                ", strikeRate=" + battingStrikeRate +
                 ", playerName='" + playerName + '\'' +
                 ", battingAvg=" + battingAvg +
                 '}';

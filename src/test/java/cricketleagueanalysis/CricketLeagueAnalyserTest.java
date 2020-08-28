@@ -14,7 +14,7 @@ public class CricketLeagueAnalyserTest {
             throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getBattingAverageSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted(EnumCollection.battingAvgComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("MS Dhoni", iplMostRunCSV[0].playerName);
     }
@@ -24,7 +24,7 @@ public class CricketLeagueAnalyserTest {
             throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getStrikingRatesSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted(EnumCollection.strikeRateComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("Ishant Sharma", iplMostRunCSV[0].playerName);
     }
@@ -34,7 +34,7 @@ public class CricketLeagueAnalyserTest {
             throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getMax4sAnd6sSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted(EnumCollection.fourAndSixComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("Andre Russell", iplMostRunCSV[0].playerName);
     }
@@ -44,7 +44,8 @@ public class CricketLeagueAnalyserTest {
             throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getMax4sAnd6sWithStrikeRatesSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted
+                (EnumCollection.fourAndSixComparator, EnumCollection.strikeRateComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("Andre Russell", iplMostRunCSV[0].playerName);
     }
@@ -54,7 +55,8 @@ public class CricketLeagueAnalyserTest {
             throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getBattingAverageWithStrikeRatesSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted
+                (EnumCollection.strikeRateComparator, EnumCollection.battingAvgComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("Ishant Sharma", iplMostRunCSV[0].playerName);
     }
@@ -64,7 +66,8 @@ public class CricketLeagueAnalyserTest {
             throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getBestRunsWithBattingAverageSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted
+                (EnumCollection.battingAvgComparator, EnumCollection.runComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("MS Dhoni", iplMostRunCSV[0].playerName);
     }
@@ -74,7 +77,7 @@ public class CricketLeagueAnalyserTest {
             throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BOWLER, MOST_WKTS_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getBestBowlingAverageSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted(EnumCollection.bowlingAvgComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("Krishnappa Gowtham", iplMostRunCSV[0].playerName);
     }
@@ -84,7 +87,8 @@ public class CricketLeagueAnalyserTest {
             throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BOWLER, MOST_WKTS_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getBestBowlerStrikeRateSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted
+                (EnumCollection.bowlerStrikeRateComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("Krishnappa Gowtham", iplMostRunCSV[0].playerName);
     }
@@ -94,7 +98,8 @@ public class CricketLeagueAnalyserTest {
             throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BOWLER, MOST_WKTS_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getBestEconomyRateSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted
+                (EnumCollection.ecoRateComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("Ben Cutting", iplMostRunCSV[0].playerName);
     }
@@ -104,7 +109,8 @@ public class CricketLeagueAnalyserTest {
             throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BOWLER, MOST_WKTS_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getBestStrikeRateWith4wAnd5wSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted
+                (EnumCollection.w4AndW5Comparator, EnumCollection.bowlerStrikeRateComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("Lasith Malinga", iplMostRunCSV[0].playerName);
     }
@@ -114,7 +120,8 @@ public class CricketLeagueAnalyserTest {
             throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BOWLER, MOST_WKTS_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getBestBowlingAverageWithStrikeRateSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted
+                (EnumCollection.bowlerStrikeRateComparator, EnumCollection.bowlingAvgComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("Krishnappa Gowtham", iplMostRunCSV[0].playerName);
     }
@@ -124,7 +131,8 @@ public class CricketLeagueAnalyserTest {
             throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BOWLER, MOST_WKTS_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getBestBowlingAverageWithMaxWicketSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted
+                (EnumCollection.wicketComparator, EnumCollection.bowlingAvgComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("Imran Tahir", iplMostRunCSV[0].playerName);
     }
@@ -135,7 +143,8 @@ public class CricketLeagueAnalyserTest {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BATSMEN,
                 MOST_RUN_CSV_FILE_PATH, MOST_WKTS_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getBestBattingAndBowlingAverageSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted
+                (EnumCollection.battingAvgComparator, EnumCollection.bowlingAvgComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("MS Dhoni", iplMostRunCSV[0].playerName);
     }
@@ -146,7 +155,8 @@ public class CricketLeagueAnalyserTest {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BATSMEN,
                 MOST_RUN_CSV_FILE_PATH, MOST_WKTS_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getBestRunsAndWicketsSortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted
+                (EnumCollection.wicketComparator, EnumCollection.runComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("David Warner", iplMostRunCSV[0].playerName);
     }
@@ -156,7 +166,8 @@ public class CricketLeagueAnalyserTest {
             throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getBestBattingAverageWithMax100SortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted
+                (EnumCollection.hundredComparator, EnumCollection.battingAvgComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("David Warner", iplMostRunCSV[0].playerName);
     }
@@ -166,7 +177,8 @@ public class CricketLeagueAnalyserTest {
             throws CricketLeagueAnalyserException {
         CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
         cricketLeagueAnalyser.loadLeagueFactSheet(EnumCollection.Cricketer.BATSMEN, MOST_RUN_CSV_FILE_PATH);
-        String sortedFactSheetData = cricketLeagueAnalyser.getBestBattingAverageWithMin100sAnd50SortedFactSheet();
+        String sortedFactSheetData = cricketLeagueAnalyser.getSingleFactSorted
+                (EnumCollection.hundredAnd50sComparator, EnumCollection.battingAvgComparator);
         IPLMostRunCSV[] iplMostRunCSV =  new Gson().fromJson(sortedFactSheetData, IPLMostRunCSV[].class);
         Assert.assertEquals("Marcus Stoinis", iplMostRunCSV[0].playerName);
     }
