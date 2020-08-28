@@ -12,10 +12,6 @@ public class CricketLeagueAnalyser {
 
     Map<String, FactSheetDAO>  factSheetMap;
 
-    public enum Cricketer {
-        BATSMEN, BOWLER
-    }
-
     Comparator<FactSheetDAO> battingAvgComparator = Comparator.comparing(leagueFact -> leagueFact.battingAvg);
     Comparator<FactSheetDAO> strikeRateComparator = Comparator.comparing(leagueFact -> leagueFact.strikeRate);
     Comparator<FactSheetDAO> fourAndSixComparator = Comparator.comparing
@@ -33,7 +29,7 @@ public class CricketLeagueAnalyser {
 
 
 
-    public void loadLeagueFactSheet(Cricketer cricketer, String... csvFilePath) throws CricketLeagueAnalyserException {
+    public void loadLeagueFactSheet(EnumCollection.Cricketer cricketer, String... csvFilePath) throws CricketLeagueAnalyserException {
         factSheetMap = new FactSheetLoader().leagueFactLoader(cricketer, csvFilePath);
     }
 
