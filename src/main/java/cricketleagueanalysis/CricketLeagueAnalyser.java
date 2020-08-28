@@ -16,7 +16,7 @@ public class CricketLeagueAnalyser {
         factSheetMap = new FactSheetLoader().leagueFactLoader(cricketer, csvFilePath);
     }
 
-    public String getSingleFactSorted(Comparator<FactSheetDAO>... comparator) {
+    public String getSortedFacts(Comparator<FactSheetDAO>... comparator) {
         List<FactSheetDAO> factSheetDAO ;
         if (comparator.length == 1) {
              factSheetDAO = factSheetMap.values().stream()
