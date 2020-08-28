@@ -8,21 +8,21 @@ public class IPLComparatorAndEnum {
         BATSMEN, BOWLER
     }
 
-    static Comparator<FactSheetDAO> battingAvgComparator = Comparator.comparing(leagueFact -> leagueFact.battingAvg);
-    static Comparator<FactSheetDAO> strikeRateComparator = Comparator.comparing
+    static Comparator<FactSheetDAO> getBattingAvg = Comparator.comparing(leagueFact -> leagueFact.battingAvg);
+    static Comparator<FactSheetDAO> getStrikeRate = Comparator.comparing
             (leagueFact -> leagueFact.battingStrikeRate);
-    static Comparator<FactSheetDAO> fourAndSixComparator = Comparator.comparing
+    static Comparator<FactSheetDAO> get4And6 = Comparator.comparing
             (leagueFact -> leagueFact.fours * 4 + leagueFact.sixes * 6);
-    static Comparator<FactSheetDAO> runComparator = Comparator.comparing(leagueFact -> leagueFact.runs);
-    static Comparator<FactSheetDAO> bowlingAvgComparator = Comparator.comparing(leagueFact -> leagueFact.bowlingAvg);
-    static Comparator<FactSheetDAO> bowlerStrikeRateComparator = Comparator.comparing
+    static Comparator<FactSheetDAO> getRun = Comparator.comparing(leagueFact -> leagueFact.runs);
+    static Comparator<FactSheetDAO> getBowlingAvg = Comparator.comparing(leagueFact -> leagueFact.bowlingAvg);
+    static Comparator<FactSheetDAO> getBowlerStrikeRate = Comparator.comparing
             (leagueFact -> leagueFact.bowlerStrikeRate);
-    static Comparator<FactSheetDAO> ecoRateComparator = Comparator.comparing(leagueFact -> leagueFact.ecoRate);
-    static Comparator<FactSheetDAO> w4AndW5Comparator = Comparator.comparing
+    static Comparator<FactSheetDAO> getEcoRate = Comparator.comparing(leagueFact -> leagueFact.ecoRate);
+    static Comparator<FactSheetDAO> getW4AndW5 = Comparator.comparing
             (leagueFact -> leagueFact.fourWicket + leagueFact.fourWicket);
-    static Comparator<FactSheetDAO> wicketComparator = Comparator.comparing(leagueFact -> leagueFact.wicket);
-    static Comparator<FactSheetDAO> hundredComparator = Comparator.comparing(leagueFact -> leagueFact.hundreds);
-    static Comparator<FactSheetDAO> hundredAnd50sComparator = Comparator.comparing
+    static Comparator<FactSheetDAO> getWickets = Comparator.comparing(leagueFact -> leagueFact.wicket);
+    static Comparator<FactSheetDAO> getHundred = Comparator.comparing(leagueFact -> leagueFact.hundreds);
+    static Comparator<FactSheetDAO> get100sAnd50s = Comparator.comparing
             (leagueFact -> leagueFact.hundreds + leagueFact.fifty == 0);
 
 }
