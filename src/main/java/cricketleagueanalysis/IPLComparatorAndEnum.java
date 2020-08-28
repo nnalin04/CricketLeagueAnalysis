@@ -2,7 +2,11 @@ package cricketleagueanalysis;
 
 import java.util.Comparator;
 
-public class EnumCollection {
+public class IPLComparatorAndEnum {
+
+    public enum Cricketer {
+        BATSMEN, BOWLER
+    }
 
     static Comparator<FactSheetDAO> battingAvgComparator = Comparator.comparing(leagueFact -> leagueFact.battingAvg);
     static Comparator<FactSheetDAO> strikeRateComparator = Comparator.comparing
@@ -21,7 +25,4 @@ public class EnumCollection {
     static Comparator<FactSheetDAO> hundredAnd50sComparator = Comparator.comparing
             (leagueFact -> leagueFact.hundreds + leagueFact.fifty == 0);
 
-    public enum Cricketer {
-        BATSMEN, BOWLER
-    }
 }
