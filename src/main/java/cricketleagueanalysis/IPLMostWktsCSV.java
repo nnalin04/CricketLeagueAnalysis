@@ -24,4 +24,17 @@ public class IPLMostWktsCSV {
 
     @CsvBindByName(column = "Wkts", required = true)
     public int wicket;
+
+    @Override
+    public String toString() {
+        return "IPLMostWktsCSV{" +
+                "playerName='" + playerName + '\'' +
+                ", bowlingAvg=" + bowlingAvg +
+                ", strikeRate=" + strikeRate +
+                ", ecoRate=" + ecoRate +
+                ", fourWicket=" + fourWicket +
+                ", fiveWicket=" + fiveWicket +
+                ", wicket=" + wicket +
+                '}';
+    }
 }

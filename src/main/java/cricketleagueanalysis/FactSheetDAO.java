@@ -36,4 +36,23 @@ public class FactSheetDAO {
         fiveWicket = iplMostWktsCSV.fiveWicket;
         wicket = iplMostWktsCSV.wicket;
     }
+
+    @Override
+    public String toString() {
+        return "FactSheetDAO{" +
+                "fifty=" + fifty +
+                ", hundreds=" + hundreds +
+                ", wicket=" + wicket +
+                ", fiveWicket=" + fiveWicket +
+                ", fourWicket=" + fourWicket +
+                ", ecoRate=" + ecoRate +
+                ", bowlingAvg=" + bowlingAvg +
+                ", runs=" + runs +
+                ", fours=" + fours +
+                ", sixes=" + sixes +
+                ", strikeRate=" + strikeRate +
+                ", playerName='" + playerName + '\'' +
+                ", battingAvg=" + battingAvg +
+                '}';
+    }
 }

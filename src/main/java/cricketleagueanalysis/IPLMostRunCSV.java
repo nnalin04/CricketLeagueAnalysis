@@ -27,4 +27,18 @@ public class IPLMostRunCSV {
 
     @CsvBindByName(column = "50", required = true)
     public int fifty;
+
+    @Override
+    public String toString() {
+        return "IPLMostRunCSV{" +
+                "playerName='" + playerName + '\'' +
+                ", avgRun=" + avgRun +
+                ", strikeRate=" + strikeRate +
+                ", fours=" + fours +
+                ", sixes=" + sixes +
+                ", runs=" + runs +
+                ", hundreds=" + hundreds +
+                ", fifty=" + fifty +
+                '}';
+    }
 }
