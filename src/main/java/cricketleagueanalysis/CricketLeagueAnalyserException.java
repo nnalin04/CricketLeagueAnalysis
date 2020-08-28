@@ -3,7 +3,7 @@ package cricketleagueanalysis;
 public class CricketLeagueAnalyserException extends Exception {
 
     public enum ExceptionType {
-        FACT_SHEET_FILE_PROBLEM, INVALID_PLAYER_TYPE, NO_IPL_DATA;
+        FACT_SHEET_FILE_PROBLEM, INVALID_PLAYER_TYPE;
     }
 
     public ExceptionType type;

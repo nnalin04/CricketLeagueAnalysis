@@ -10,7 +10,8 @@ public class CricketLeagueAnalyser {
 
     Map<String, FactSheetDAO>  factSheetMap;
 
-    public void loadLeagueFactSheet(IPLComparatorAndEnum.Cricketer cricketer, String... csvFilePath) throws CricketLeagueAnalyserException {
+    public void loadLeagueFactSheet(IPLComparatorAndEnum.Cricketer cricketer, String... csvFilePath)
+            throws CricketLeagueAnalyserException {
         factSheetMap = new FactSheetLoader().leagueFactLoader(cricketer, csvFilePath);
     }
 
