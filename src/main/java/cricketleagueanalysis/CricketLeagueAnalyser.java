@@ -15,14 +15,21 @@ public class CricketLeagueAnalyser {
         factSheetMap = new FactSheetLoader().leagueFactLoader(cricketer, csvFilePath);
     }
 
-    public String getSortedFacts(Comparator<FactSheetDAO>... comparator) {
+    public String getSortedFacts(IPLComparatorAndEnum.Compare... compare) {
         List<FactSheetDAO> factSheetDAO;
-        if (comparator.length == 1) {
+        if (compare.length == 1) {
              factSheetDAO = factSheetMap.values().stream()
-                    .sorted(comparator[0].reversed()).collect(Collectors.toList());
+                    .sorted(IPLComparatorAndEnum.getComparator(compare[0]).reversed()).collect(Collectors.toList());
         } else {
-            factSheetDAO = factSheetMap.values().stream()
-                    .sorted(comparator[0].thenComparing(comparator[1]).reversed()).collect(Collectors.toList());
+            factSheetDAO = factSheetMap.values()
+                                       .stream()
+                                       .sorted(IPLComparatorAndEnum
+                                       .getComparator(compare[0])
+                                       .thenComparing(IPLComparatorAndEnum
+                                       .getComparator(compare[1]))
+                                       .reversed())
+                                       .collect(Collectors
+                                               .toList());
         }
         return new Gson().toJson(factSheetDAO);
     }

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="cricketleagueanalysis.CricketLeagueAnalyserTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2020-08-28T15:58:21" hostname="EEE1407203" time="4.682">
+<testsuite name="cricketleagueanalysis.CricketLeagueAnalyserTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2020-08-30T08:46:03" hostname="EEE1407203" time="6.2">
   <properties/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnBattingAverageWithBestStrikingRates_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.717"/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnBestBowlingAverageWithMaxWicket_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.219"/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnBestRunsWithBattingAverage_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.254"/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnBestBowlingAverageWithStrikeRate_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.211"/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnMaximum6sAnd4s_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.199"/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnBestEconomyRate_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.181"/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnMaximum6sAnd4sWithStrikingRates_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.217"/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnBestStrikeRateWith4wAnd5w_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.227"/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnBattingAverage_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.266"/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnBestBowlingAverage_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.21"/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnBestRunsAndWickets_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.429"/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnBestBattingAndBowlingAverage_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.429"/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnBestBowlerStrikeRate_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.331"/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnBestBattingAverageWithMin100sAnd50_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.377"/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnBestBattingAverageWithMax100_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.198"/>
-  <testcase name="givenMostRunFactSheet_WhenShortedOnStrikingRates_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.197"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnBattingAverageWithBestStrikingRates_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="1.01"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnBestBowlingAverageWithMaxWicket_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.282"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnBestRunsWithBattingAverage_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.384"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnBestBowlingAverageWithStrikeRate_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.334"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnMaximum6sAnd4s_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.29"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnBestEconomyRate_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.289"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnMaximum6sAnd4sWithStrikingRates_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.323"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnBestStrikeRateWith4wAnd5w_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.433"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnBattingAverage_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.429"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnBestBowlingAverage_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.279"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnBestRunsAndWickets_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.492"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnBestBattingAndBowlingAverage_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.505"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnBestBowlerStrikeRate_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.241"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnBestBattingAverageWithMin100sAnd50_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.34"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnBestBattingAverageWithMax100_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.247"/>
+  <testcase name="givenMostRunFactSheet_WhenShortedOnStrikingRates_ShouldReturnSortedResult" classname="cricketleagueanalysis.CricketLeagueAnalyserTest" time="0.245"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
